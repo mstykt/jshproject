@@ -42,7 +42,7 @@ public abstract class GenericDAO<T extends BaseModel> implements Serializable {
         return (T) session.merge(t);
     }
 
-    public T delete(final T t) {
+    public T delete(T t) {
         final Session session = sessionFactory.getCurrentSession();
         t.setActive(false);
         t.setDeleted(true);
